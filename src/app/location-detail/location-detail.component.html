@@ -3,14 +3,14 @@
     <h5 class="card-title">{{ town.location.location }}</h5>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">eircode: {{ town.location.ecode }}</li>
-    <li class="list-group-item">latitude: {{ town.location.lat }}</li>
-    <li class="list-group-item">longitude: {{ town.location.lng }}</li>
+    <li class="list-group-item">{{ 'LOCATION_DETAIL.EIRCODE' | translate}} {{ town.location.ecode }}</li>
+    <li class="list-group-item">{{ 'LOCATION_DETAIL.LATITUDE' | translate}} {{ town.location.lat }}</li>
+    <li class="list-group-item">{{ 'LOCATION_DETAIL.LONGITUDE' | translate}} {{ town.location.lng }}</li>
   </ul>
   <div class="card-body">
       <a href="#" class="card-link">Housing Prices</a>
       <a href="#" class="card-link">Rental Prices</a>
-      <a routerLink="/location/{{ town.location.location | lowercase }}/direction/{{ town.location.lat }}/{{ town.location.lng }}" class="card-link">Show Direction</a>
+      <a routerLink="/location/{{ town.location.location | lowercase }}/direction/{{ town.location.lat }}/{{ town.location.lng }}" class="card-link">{{ 'LOCATION_DETAIL.SHOW_DIRECTION' | translate}}</a>
   </div>
 </div>
 

@@ -9,8 +9,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class DirectionComponent implements OnInit {
   // initial position
-  public lat: Number = 24.799448;
-  public lng: Number = 120.979021;
+  public lat: Number = 54.0115001;
+  public lng: Number = -6.4027721;
 
   public destLat: number;
   public destLng: number;

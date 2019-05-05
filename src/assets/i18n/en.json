@@ -1,0 +1,13 @@
+{
+  "NAV": {
+    "APPTITLE" : "Ross Web App",
+    "LOCATIONS" : "Locations",
+    "MY_POSITION" : "My Position"
+  },
+  "LOCATION_DETAIL" : {
+    "EIRCODE" : "eircode:",
+    "LATITUDE" : "latitude",
+    "LONGITUDE" : "longitude",
+    "SHOW_DIRECTION" : "Show Direction"
+  }
+}
