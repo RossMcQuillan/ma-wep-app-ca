@@ -1,0 +1,20 @@
+<ul *ngIf="towns" class="list-group">
+  <li *ngFor="let town of towns.locations" class="list-group-item"><a routerLink="/location/{{ town.id }}">{{ town.location }}</a></li>
+</ul>
+
+<!-- <div>
+  <h5>Locations List in loop. Data stored in object in models/Locations</h5>
+  <ul *ngFor="let location of locations" class="list-group">
+    <li (click)="getLocation()" class="list-group-item"><a routerLink="/location/{{ location.id }}">{{ location.name }}</a></li>
+  </ul>
+</div> -->
+
+<!-- <div>
+  <h5>Location Object</h5>
+  <app-location-detail [location]="location"></app-location-detail>
+</div>
+
+<div>
+  <h5>Location Objects in loop</h5>
+  <app-location-detail *ngFor="let location of locations" [location]="location"></app-location-detail>
+</div> -->
