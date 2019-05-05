@@ -26,7 +26,7 @@ export class LocationDetailComponent implements OnInit {
   ngOnInit() {
     
     this.getLocationData();
-    //this.getPosition();
+   
   }
 
 
@@ -61,19 +61,4 @@ export class LocationDetailComponent implements OnInit {
     });
   }
 
-  getPosition() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position: Position) => {
-        if (position) {
-          this.lat = position.coords.latitude;
-          this.lng = position.coords.longitude;
-          console.log(this.lat);
-          console.log(this.lng);
-        }
-      },
-        (error: PositionError) => console.log(error));
-    } else {
-      alert("Geolocation is not supported by this browser.");
-    }
-  }
 }

@@ -4,19 +4,14 @@
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">eircode: {{ town.location.ecode }}</li>
-    <li class="list-group-item">lat: {{ town.location.lat }}</li>
-    <li class="list-group-item">lng: {{ town.location.lng }}</li>
+    <li class="list-group-item">latitude: {{ town.location.lat }}</li>
+    <li class="list-group-item">longitude: {{ town.location.lng }}</li>
   </ul>
   <div class="card-body">
       <a href="#" class="card-link">Housing Prices</a>
       <a href="#" class="card-link">Rental Prices</a>
+      <a routerLink="/location/{{ town.location.location | lowercase }}/direction/{{ town.location.lat }}/{{ town.location.lng }}" class="card-link">Show Direction</a>
   </div>
 </div>
 
-<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map>
-
-
-
-<p><a class="btn btn-primary" routerLink='/locations'>Back to Locations</a></p>
+<p><a class="btn btn-primary mt-5" routerLink='/locations'>Back to Locations</a></p>
