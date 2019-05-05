@@ -1,6 +1,6 @@
-import { Component, OnInit} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { LocationService }  from '../services/location.service';
 
 
 @Component({
@@ -11,14 +11,69 @@ import { Location } from '@angular/common';
 
 export class LocationDetailComponent implements OnInit {
 
+  // google maps zoom level
+  zoom: number = 13;
+  lat: number;
+  lng: number;
+  town: any = null;
+
   constructor(
-    private location: Location
+    private router      : Router,
+    private route       : ActivatedRoute,
+    private locationData: LocationService
   ) {}
 
-  ngOnInit() {}
-
-  goBack(): void {
-    this.location.back();
+  ngOnInit() {
+    
+    this.getLocationData();
+    //this.getPosition();
   }
 
+
+  getLocationData() {
+    this.town = null;
+
+    this.route.paramMap.subscribe(params => {
+
+      // Reset twon to null
+      this.town = null;
+
+      //get location id
+      const id = parseInt(params.get('id'), 10);
+
+      if (isNaN(id)) {
+        return this.router.navigateByUrl('/locations');
+      }
+
+      this.locationData.getLocation(id)
+        .subscribe((response :any) => {
+          if (response.location.id !== undefined) {
+            this.town = response;
+            this.lat = parseFloat(response.location.lat);
+            this.lng = parseFloat(response.location.lng);
+            console.log(this.town);
+            console.log(this.lat);
+            console.log(this.lng);
+          } else {
+            return this.router.navigateByUrl('/locations');
+          }  
+        });
+    });
+  }
+
+  getPosition() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position: Position) => {
+        if (position) {
+          this.lat = position.coords.latitude;
+          this.lng = position.coords.longitude;
+          console.log(this.lat);
+          console.log(this.lng);
+        }
+      },
+        (error: PositionError) => console.log(error));
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  }
 }

@@ -8,17 +8,19 @@ import { LocationService }  from '../services/location.service';
 })
 export class LocationsComponent implements OnInit {
 
-  towns: Object;
+  towns: any = null;;
 
   constructor(
     private locationData: LocationService
   ) { }
 
   ngOnInit() {
+
     // api data passed from location.service
-    this.locationData.getLocations().subscribe(locationData => {
-      this.towns = locationData
-      console.log(this.towns);
+    this.locationData.getAllLocations()
+      .subscribe((response:any) => {
+        this.towns = response
+        console.log(this.towns);
     })
   }
 

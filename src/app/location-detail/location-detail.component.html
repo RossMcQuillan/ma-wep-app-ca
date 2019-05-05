@@ -1,8 +1,22 @@
-<div>
-  <p> id: {{location.id }} </p>
-  <p> Location: {{location.name | uppercase}} </p>
-  <p> Lat: {{location.lat }} </p>
-  <p> Lng: {{location.lng }} </p>
+<div *ngIf='town' class="card  text-center">
+  <div class="card-body">
+    <h5 class="card-title">{{ town.location.location }}</h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">eircode: {{ town.location.ecode }}</li>
+    <li class="list-group-item">lat: {{ town.location.lat }}</li>
+    <li class="list-group-item">lng: {{ town.location.lng }}</li>
+  </ul>
+  <div class="card-body">
+      <a href="#" class="card-link">Housing Prices</a>
+      <a href="#" class="card-link">Rental Prices</a>
+  </div>
 </div>
-<hr>
-<button (click)="goBack()">go back</button>
+
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>
+
+
+
+<p><a class="btn btn-primary" routerLink='/locations'>Back to Locations</a></p>
