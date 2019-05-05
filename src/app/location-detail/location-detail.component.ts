@@ -23,12 +23,9 @@ export class LocationDetailComponent implements OnInit {
     private locationData: LocationService
   ) {}
 
-  ngOnInit() {
-    
+  ngOnInit() {  
     this.getLocationData();
-   
   }
-
 
   getLocationData() {
     this.town = null;

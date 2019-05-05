@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { LocationDetailComponent } from './location-detail/location-detail.component';
 import { GpsPositionComponent } from './gps-position/gps-position.component';
 import { DirectionComponent } from './direction/direction.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 
@@ -32,7 +34,8 @@ import { DirectionComponent } from './direction/direction.component';
     AgmCoreModule.forRoot({  // @agm/core
       apiKey: 'AIzaSyDFTKbcSXEN22pUx3zfaabEOGyy7oOZtmI',
     }),
-    AgmDirectionModule,      // agm-direction
+    AgmDirectionModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),      // agm-direction
   ],
   providers: [],
   bootstrap: [AppComponent]
