@@ -23,5 +23,17 @@
         ]
       }
     }
+  ], 
+  "dataGroups" : [
+    {
+      "name" : "api",
+      "urls": ["http://localhost/jwt_generate/response/**"],
+      "cacheConfig": {
+        "maxSize": 100,
+        "maxAge": "3d",
+        "timeout": "1m",
+        "strategy": "freshness"
+      }
+    }
   ]
 }

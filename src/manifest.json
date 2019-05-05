@@ -1,6 +1,6 @@
 {
-  "name": "ma-web-app-ca",
-  "short_name": "ma-web-app-ca",
+  "name": "Ross Progressive Web App",
+  "short_name": "Ross-Web-App",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
