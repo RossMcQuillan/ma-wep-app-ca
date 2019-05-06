@@ -6,7 +6,8 @@ import { LocationService }  from '../services/location.service';
 @Component({
   selector: 'app-location-detail',
   templateUrl: './location-detail.component.html',
-  styleUrls: ['./location-detail.component.scss']
+  styleUrls: ['./location-detail.component.scss'],
+  providers: [LocationService]
 })
 
 export class LocationDetailComponent implements OnInit {
