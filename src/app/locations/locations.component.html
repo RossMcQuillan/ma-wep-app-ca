@@ -1,7 +1,11 @@
-<ul *ngIf="towns" class="list-group">
-  <li *ngFor="let town of towns.locations" class="list-group-item">
+<ul *ngIf="towns" class="list-group towns">
+  <li *ngFor="let town of towns.locations" class="list-group-item"  [class.saved]="isSaved(town.id)">
     <a routerLink="/location/{{ town.id }}">{{ town.location }}</a>
-    <input class="" type="checkbox" (change)="toggleVisibility($event)" [checked]="isSaved(town.id)" [value]="town.id"></li>
+    <label class="float-right">
+      <input type="checkbox" (change)="toggleVisibility($event)" [checked]="isSaved(town.id)" [value]="town.id">
+      {{ 'LOCATIONS.SAVE' | translate}} 
+    </label>
+  </li>
 </ul>
 
 <!-- <div>

@@ -9,5 +9,8 @@
     "LATITUDE" : "latitude",
     "LONGITUDE" : "longitude",
     "SHOW_DIRECTION" : "Show Direction"
+  },
+  "LOCATIONS" : {
+    "SAVE" : "Save"
   }
 }

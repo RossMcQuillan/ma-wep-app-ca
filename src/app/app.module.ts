@@ -12,7 +12,6 @@ import { AppComponent } from './app.component';
 import { LocationService }  from './services/location.service';
 import { LocationsComponent } from './locations/locations.component';
 import { NavComponent } from './nav/nav.component';
-import { HomeComponent } from './home/home.component';
 import { LocationDetailComponent } from './location-detail/location-detail.component';
 import { GpsPositionComponent } from './gps-position/gps-position.component';
 import { DirectionComponent } from './direction/direction.component';
@@ -34,7 +33,6 @@ const translateModule = TranslateModule.forRoot({loader: {
     AppComponent,
     LocationsComponent,
     NavComponent,
-    HomeComponent,
     LocationDetailComponent,
     GpsPositionComponent,
     DirectionComponent

@@ -12,11 +12,11 @@ export class LocationService {
   ) { }
 
   getAllLocations() {
-    return this.http.get('http://localhost/jwt_generate/response/prices/');
+    return this.http.get('//api.fabweb.ie/response/prices/');
   }
 
   getLocation(id: number) {
-    return this.http.get(`http://localhost/jwt_generate/response/price/${id}`);
+    return this.http.get(`//api.fabweb.ie/response/price/${id}`);
   }
 
 }

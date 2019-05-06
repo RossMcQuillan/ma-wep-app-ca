@@ -9,7 +9,7 @@ import { LocationService }  from '../services/location.service';
 export class LocationsComponent implements OnInit {
 
   towns: any = null;
-  checked;
+  label: string = "Save";
   saved: Array<Object>;
 
   constructor(
@@ -26,13 +26,15 @@ export class LocationsComponent implements OnInit {
   }
 
 
-  isSaved(value: string): boolean {
-    let ids = JSON.parse(localStorage.getItem("ids"));
-    if (ids.length > 0) {
-      for (let i = 0; i < ids.length; i++) {
-        if(ids[i] == value) {
+  isSaved(value: string): any {
+    if (localStorage.length > 0) {
+      let ids = JSON.parse(localStorage.getItem("ids"));
+      if (ids.length > 0) {
+        for (let i = 0; i < ids.length; i++) {
+          if(ids[i] == value) {
             return true;
-        } 
+          } 
+        }
       }
     }
   }
