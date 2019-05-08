@@ -17,6 +17,7 @@ import { GpsPositionComponent } from './gps-position/gps-position.component';
 import { DirectionComponent } from './direction/direction.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { HousePricesComponent } from './house-prices/house-prices.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -35,7 +36,8 @@ const translateModule = TranslateModule.forRoot({loader: {
     NavComponent,
     LocationDetailComponent,
     GpsPositionComponent,
-    DirectionComponent
+    DirectionComponent,
+    HousePricesComponent
   ],
   imports: [
     BrowserModule,
